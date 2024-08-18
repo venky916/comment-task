@@ -1,22 +1,48 @@
-// Sorting functions
+const sortCommentsByTime = (comments) => {
+    return comments
+        .map(comment => ({
+            ...comment,
+            replies: sortCommentsByTime(comment.replies || []),
+        }))
+        .sort((a, b) => new Date(b.time) - new Date(a.time));
+};
+
+// Sorting function
 export const sortByTime = (comments) => {
-    return [...comments].sort((a, b) => new Date(b.time) - new Date(a.time));
+    return sortCommentsByTime(comments);
 };
 
+// Recursive function to sort comments by reactions
+const sortCommentsByReactions = (comments) => {
+    return comments
+        .map(comment => ({
+            ...comment,
+            replies: sortCommentsByReactions(comment.replies || []),
+        }))
+        .sort((a, b) => {
+            const totalReactionsA = a.reactions.reduce(
+                (sum, reaction) => sum + reaction.count,
+                0,
+            );
+            const totalReactionsB = b.reactions.reduce(
+                (sum, reaction) => sum + reaction.count,
+                0,
+            );
+            return totalReactionsB - totalReactionsA;
+        });
+};
+
+// Sorting function
 export const sortByReactions = (comments) => {
-    return [...comments].sort((a, b) => {
-        const totalReactionsA = a.reactions.reduce(
-            (sum, reaction) => sum + reaction.count,
-            0,
-        );
-        const totalReactionsB = b.reactions.reduce(
-            (sum, reaction) => sum + reaction.count,
-            0,
-        );
-        return totalReactionsB - totalReactionsA;
-    });
+    return sortCommentsByReactions(comments);
 };
 
+export const countComments = (comments) => {
+    return comments.reduce((count, comment) => {
+        // Count the current comment and recursively count its replies
+        return count + 1 + countComments(comment.replies || []);
+    }, 0);
+};
 export const getTimeDifference = (timestamp) => {
     const now = Date.now();
     const difference = now - new Date(timestamp).getTime(); // Difference in milliseconds

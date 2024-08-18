@@ -8,11 +8,13 @@ const Comment = ({ comment }) => {
 
   return (
     <div className="m-2 p-2 ">
-      <div className="flex gap-2">
-        <img className="w-12 h-12" alt="user" src={comment.userImage} />
+      <div className="flex gap-2 items-center">
+        <span className="rounded-xl">
+          <img className="w-12 h-12" alt="user" src={comment.userImage} />
+        </span>
         <span>{comment.name}</span>
       </div>
-      <p>{comment.text}</p>
+      <p className="font-semibold text-[#787777] m-2 p-2">{comment.text}</p>
       <div className="flex gap-2 items-center">
         <Message commentId={comment.id} prev={comment.reactions} />
         <button onClick={() => setOpen(true)} className=" px-2 border-r-2">
@@ -23,7 +25,7 @@ const Comment = ({ comment }) => {
         </h6>
       </div>
       {comment.image && (
-        <div className="mt-2">
+        <div className="mt-2 rounded-md">
           <img
             src={comment.image}
             alt="Comment Thumbnail"

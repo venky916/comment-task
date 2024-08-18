@@ -84,20 +84,20 @@
             "replies": []
           }
         ]
-      },
-      {
-        "id": "8",
-        "name": "Hannah Evans",
-        "text": "This article had some great points, but I would love to see more on cloud computing.",
-        "time": "2024-08-18T11:05:00Z",
-        "reactions": [
-          { "emoji": "👍", "count": 1 },
-          { "emoji": "❤️", "count": 1 }
-        ],
-        "image": null,
-        "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
-        "replies": []
       }
     ]
+  },
+  {
+    "id": "8",
+    "name": "Hannah Evans",
+    "text": "This article had some great points, but I would love to see more on cloud computing.",
+    "time": "2024-08-18T11:05:00Z",
+    "reactions": [
+      { "emoji": "👍", "count": 1 },
+      { "emoji": "❤️", "count": 1 }
+    ],
+    "image": null,
+    "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+    "replies": []
   }
 ]

@@ -1,6 +1,8 @@
 import React, { useState, useContext, useRef, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid'; // Import uuid for generating unique IDs
 import CommentContext from '../context/CommentContext';
+import upload from '../assets/upload.png'
+import U from"../assets/U.png"
 
 const CommentBox = ({ close, showClose, id }) => {
   const { addComment, user } = useContext(CommentContext);
@@ -77,13 +79,30 @@ const CommentBox = ({ close, showClose, id }) => {
 
       <hr className="border-none h-[2px] bg-[#333] my-5 mx-auto" />
 
-      <div className="flex justify-between">
-        <div className="flex gap-2">
-          <button onClick={() => applyStyle('bold')}>Bold</button>
-          <button onClick={() => applyStyle('italic')}>Italic</button>
-          <button onClick={() => applyStyle('underline')}>Underline</button>
+      <div className="flex justify-between items-center">
+        <div className="flex gap-2 items-center">
+          <button
+            onClick={() => applyStyle('bold')}
+            className="text-[#7E7E7E] font-bold px-2"
+          >
+            B
+          </button>
+          <button
+            onClick={() => applyStyle('italic')}
+            className="text-[#7E7E7E] font-bold px-2"
+          >
+            I
+          </button>
+          <button
+            onClick={() => applyStyle('underline')}
+            className="h-3"
+          >
+            <img src={U} alt="under" />
+          </button>
           <label>
-            <span className="cursor-pointer">Add Image</span>
+            <span className="cursor-pointer">
+              <img src={upload} alt="uploadimage" className="h-4" />
+            </span>
             <input
               type="file"
               accept="image/*"
@@ -93,8 +112,17 @@ const CommentBox = ({ close, showClose, id }) => {
           </label>
         </div>
         <div className="flex gap-2">
-          {showClose && <button onClick={handleClose}>Close</button>}
-          <button onClick={handleAddComment}>Send</button>
+          {showClose && (
+            <button onClick={handleClose} className="bg-[#E5E5E5] px-6 py-2 rounded-lg text-black">
+              Cancel
+            </button>
+          )}
+          <button
+            onClick={handleAddComment}
+            className="bg-[#1D1D1D] text-white px-6 py-2 rounded-lg"
+          >
+            Send
+          </button>
         </div>
       </div>
     </div>

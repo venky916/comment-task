@@ -1,6 +1,7 @@
 import CommentContext from '../context/CommentContext';
 import { signInWithGooglePopup, auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
+import gLogo from '../assets/Ellipse 3.png'
 
 import { useContext } from 'react';
 
@@ -21,9 +22,12 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+    <div className='m-2'>
       {!user ? (
-        <button onClick={logGoogleUser}>Sign In With Google</button>
+        <div className='flex justify-end gap-2'>
+          <img src={gLogo} alt="googlelogo" />
+          <button onClick={logGoogleUser}>Sign In With Google</button>
+        </div>
       ) : (
         <div className="flex justify-between">
           <h1>{user.displayName}</h1>
