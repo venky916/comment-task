@@ -1,0 +1,103 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Johnson",
+    "text": "This is a great article! I really enjoyed the insights.",
+    "time": "2024-08-18T10:30:00Z",
+    "reactions": [
+      { "emoji": "👍", "count": 5 },
+      { "emoji": "❤️", "count": 2 }
+    ],
+    "image": null,
+    "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+    "replies": [
+      {
+        "id": "2",
+        "name": "Bob Smith",
+        "text": "I agree, especially the part about technology trends. Very informative!",
+        "time": "2024-08-18T10:35:00Z",
+        "image": null,
+        "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+        "replies": [
+          {
+            "id": "3",
+            "name": "Carol Davis",
+            "text": "Absolutely, the section on AI was particularly eye-opening.",
+            "time": "2024-08-18T10:40:00Z",
+            "reactions": [
+              { "emoji": "❤️", "count": 4 }
+            ],
+            "image": null,
+            "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+            "replies": [
+              {
+                "id": "4",
+                "name": "David Wilson",
+                "text": "Yes, and the practical applications discussed were very helpful.",
+                "time": "2024-08-18T10:45:00Z",
+                "reactions": [
+                  { "emoji": "👍", "count": 2 },
+                  { "emoji": "😮", "count": 1 }
+                ],
+                "image": null,
+                "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+                "replies": [
+                  {
+                    "id": "5",
+                    "name": "Eve Martin",
+                    "text": "I found the examples to be very relevant. Great job!",
+                    "time": "2024-08-18T10:50:00Z",
+                    "reactions": [
+                      { "emoji": "❤️", "count": 3 },
+                      { "emoji": "👏", "count": 1 }
+                    ],
+                    "image": null,
+                    "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+                    "replies": []
+                  }
+                ]
+              },
+              {
+                "id": "6",
+                "name": "Fiona Lee",
+                "text": "Thanks for sharing! The tips on data security were very useful.",
+                "time": "2024-08-18T10:55:00Z",
+                "reactions": [
+                  { "emoji": "👍", "count": 1 }
+                ],
+                "image": null,
+                "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+                "replies": []
+              }
+            ]
+          },
+          {
+            "id": "7",
+            "name": "George Clark",
+            "text": "Interesting read. The sections on future trends were quite thought-provoking.",
+            "time": "2024-08-18T11:00:00Z",
+            "reactions": [
+              { "emoji": "❤️", "count": 2 }
+            ],
+            "image": null,
+            "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+            "replies": []
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "name": "Hannah Evans",
+        "text": "This article had some great points, but I would love to see more on cloud computing.",
+        "time": "2024-08-18T11:05:00Z",
+        "reactions": [
+          { "emoji": "👍", "count": 1 },
+          { "emoji": "❤️", "count": 1 }
+        ],
+        "image": null,
+        "userImage": "https://static.vecteezy.com/system/resources/previews/000/576/206/original/vector-sign-of-people-icon.jpg",
+        "replies": []
+      }
+    ]
+  }
+]
