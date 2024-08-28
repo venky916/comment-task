@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import CommentContext from '../context/CommentContext';
 import logo from '../assets/Image.png'
 
-const Message = ({ commentId, prev }) => {
+const Reaction = ({ commentId, prev }) => {
   const { updateCommentReactions } = useContext(CommentContext);
   const [reactions, setReactions] = useState(prev);
   const [showPicker, setShowPicker] = useState(false);
@@ -72,4 +72,4 @@ const Message = ({ commentId, prev }) => {
   );
 };
 
-export default Message;
+export default Reaction;

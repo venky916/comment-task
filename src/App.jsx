@@ -7,7 +7,7 @@ import { CommentProvider } from './context/CommentContext';
 function App() {
   return (
     <CommentProvider>
-      <div className='w-[75%] mx-auto my-5 border rounded-lg'>
+      <div className='w-[50%] mx-auto my-5 border rounded-lg font-inter'>
         <SignIn />
         <CommentContainer />
       </div>

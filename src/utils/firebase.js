@@ -8,7 +8,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyD9pVz4Gh1hv5Dnv4EjuUWg6WtFTgNFTmI",
-    authDomain: "comment-task-a288c.firebaseapp.com",
+    authDomain:"comment-task-a288c.firebaseapp.com",
     projectId: "comment-task-a288c",
     storageBucket: "comment-task-a288c.appspot.com",
     messagingSenderId: "367637022479",

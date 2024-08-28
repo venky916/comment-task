@@ -25,7 +25,7 @@ const CommentContainer = () => {
   }, [commentsData, sortingMethod]);
 
   return (
-    <div className="m-2 p-2">
+    <div className="m-4 p-2 border-2 rounded-xl shadow-lg ">
       <div className="flex justify-between items-center mb-2">
         <span className='font-bold text-3xl'>Comments {count}</span>
         <div className="flex gap-2 border p-1 rounded bg-slate-50">
