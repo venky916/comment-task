@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
-const Toast = ({ message, onClose }) => {
+const Toast = ({ message, onClose, type }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -23,20 +22,29 @@ const Toast = ({ message, onClose }) => {
     };
   }, [onClose]);
 
+  // Define styles based on the toast type
+  const getToastStyle = () => {
+    switch (type) {
+      case 'success':
+        return 'bg-green-400';
+      case 'error':
+        return 'bg-red-400';
+      case 'info':
+        return 'bg-blue-400';
+      default:
+        return 'bg-gray-400';
+    }
+  };
+
   return (
     <div
-      className={`fixed top-5 right-5 p-4 rounded-lg shadow-lg bg-blue-500 text-white transition-all duration-500 ease-in-out ${
+      className={`fixed top-5 right-5 p-4 rounded-lg shadow-lg text-white transition-all duration-500 ease-in-out ${getToastStyle()} ${
         visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
       }`}
     >
       <span>{message}</span>
     </div>
   );
-};
-
-Toast.propTypes = {
-  message: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 export default Toast;

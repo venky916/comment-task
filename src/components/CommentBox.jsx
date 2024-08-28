@@ -12,17 +12,22 @@ const CommentBox = ({ close, showClose, id }) => {
   const [suggestions, setSuggestions] = useState([]);
   const editorRef = useRef(null);
 
-  const [toast, setToast] = useState(null);
+  const [toast, setToast] = useState({ message: '', type: '' });
 
-  const showToast = (message) => {
-    setToast(message);
-    setTimeout(() => setToast(null), 3000); // Automatically hide the toast after 3 seconds
+  const showToast = (message, type) => {
+    setToast({ message, type });
+    setTimeout(() => setToast({ message: '', type: '' }), 3000); // Automatically hide the toast after 3 seconds
   };
 
   const userList = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
-    { id: 3, name: 'Charlie' },
+    { id: 1, name: 'Alice Johnson' },
+    { id: 2, name: 'Bob Smith' },
+    { id: 3, name: 'Carol Davis' },
+    { id: 4, name: 'David Wilson' },
+    { id: 5, name: 'Eve Martin' },
+    { id: 6, name: 'Fiona Lee' },
+    { id: 7, name: 'George Clark' },
+    { id: 8, name: 'Hannah Evans' },
   ];
 
   const onContentBlur = useCallback((evt) => {
@@ -30,9 +35,16 @@ const CommentBox = ({ close, showClose, id }) => {
   }, []);
 
   const handleAddComment = () => {
-    console.log(editorRef.current.innerText.length);
+    if (editorRef.current.innerText.length === 0) {
+      showToast('Please type something in comment to send', 'info');
+      return;
+    }
+
     if (editorRef.current.innerText.length > 250) {
-      alert('Comment exceeds the maximum length of 250 characters.');
+      showToast(
+        'Comment exceeds the maximum length of 250 characters.',
+        'error',
+      );
       return;
     }
 
@@ -55,7 +67,7 @@ const CommentBox = ({ close, showClose, id }) => {
     setImages([]); // Reset images after adding the comment
     editorRef.current.innerText = '';
     handleClose();
-    showToast('This is a success message!');
+   showToast('Comment sent successfully', 'success');
   };
 
   const handleClose = () => {
@@ -122,14 +134,20 @@ const CommentBox = ({ close, showClose, id }) => {
 
   return (
     <>
-      {toast && <Toast message={toast} onClose={() => setToast(null)} />}
+      {toast.message && (
+        <Toast
+          message={toast.message}
+          onClose={() => setToast({ message: '', type: '' })}
+          type={toast.type}
+        />
+      )}
       <div className="relative h-auto m-2 p-4 border rounded-lg bg-white shadow-md">
         <div
           contentEditable="true"
           ref={editorRef}
           onBlur={onContentBlur}
           onKeyUp={handleKeyUp}
-          className="relative  min-h-28 p-2 border bg-gray-100 rounded"
+          className="relative min-h-28 p-2 border bg-gray-100 rounded"
         ></div>
 
         {/* Display suggestions */}
